@@ -1,0 +1,428 @@
+
+/* =========================================
+   HERO — ELEGANT WEDDING
+   ALDIMIRO & CARLOTA
+========================================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+
+  width: 100%;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding: 100px 24px 115px;
+
+  background: #17374e;
+  color: #fffaf2;
+
+  text-align: center;
+}
+
+/* =========================================
+   FOTOGRAFIA E PARALLAX
+========================================= */
+
+.hero-background-parallax {
+  position: absolute;
+  inset: -45px;
+  z-index: -3;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-background {
+  position: absolute;
+  inset: -35px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  will-change: transform;
+}
+
+/* =========================================
+   CAMADAS DE PROFUNDIDADE
+========================================= */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background: linear-gradient(
+    180deg,
+    rgba(13, 35, 52, 0.48) 0%,
+    rgba(16, 43, 63, 0.58) 45%,
+    rgba(12, 31, 48, 0.76) 100%
+  );
+
+  pointer-events: none;
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: radial-gradient(
+    ellipse at center,
+    transparent 15%,
+    rgba(8, 24, 38, 0.35) 100%
+  );
+
+  pointer-events: none;
+}
+
+.hero-light {
+  position: absolute;
+  width: 70vw;
+  height: 70vw;
+
+  top: -45%;
+  right: -25%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(194, 221, 236, 0.2),
+    transparent 65%
+  );
+
+  filter: blur(60px);
+  pointer-events: none;
+
+  animation: heroLuz 13s ease-in-out infinite alternate;
+}
+
+/* =========================================
+   CONTEÚDO
+========================================= */
+
+.hero-content-parallax {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+}
+
+/* ETIQUETA */
+
+.hero-eyebrow {
+  margin: 0 0 35px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 6px;
+
+  color: #e4d0ad;
+}
+
+/* =========================================
+   NOMES
+========================================= */
+
+.hero-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.first-name,
+.second-name {
+  display: block;
+
+  font-size: clamp(65px, 9vw, 125px);
+  font-weight: 400;
+  letter-spacing: -2px;
+
+  text-shadow:
+    0 8px 35px rgba(0, 0, 0, 0.16);
+}
+
+.ampersand {
+  display: block;
+  margin: 12px 0 17px;
+
+  font-size: clamp(50px, 6vw, 75px);
+  font-weight: 300;
+  font-style: italic;
+
+  color: #e4d0ad;
+}
+
+.ampersand-inner {
+  display: inline-block;
+}
+
+/* =========================================
+   ORNAMENTO
+========================================= */
+
+.hero-ornament {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  margin: 35px auto 28px;
+}
+
+.hero-ornament span {
+  display: block;
+  width: 28px;
+  height: 1px;
+
+  background: rgba(228, 208, 173, 0.6);
+
+  transform-origin: center;
+}
+
+.hero-ornament i {
+  display: block;
+  width: 5px;
+  height: 5px;
+
+  background: #e4d0ad;
+  border-radius: 50%;
+}
+
+/* =========================================
+   MENSAGEM
+========================================= */
+
+.hero-message {
+  max-width: 570px;
+  margin: 0 auto;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(22px, 2.8vw, 29px);
+  line-height: 1.35;
+
+  color: rgba(255, 250, 242, 0.9);
+}
+
+/* =========================================
+   DATA
+========================================= */
+
+.hero-date-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 42px;
+}
+
+.save-date {
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 5px;
+
+  color: #e4d0ad;
+}
+
+.wedding-date {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(26px, 3.5vw, 37px);
+  font-weight: 500;
+  letter-spacing: 2px;
+
+  color: #fffaf2;
+}
+
+/* =========================================
+   INDICADOR DE SCROLL
+========================================= */
+
+.hero-scroll {
+  position: absolute;
+  z-index: 3;
+
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  white-space: nowrap;
+}
+
+.hero-scroll span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+
+  color: rgba(255, 250, 242, 0.75);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 35px;
+
+  background: linear-gradient(
+    to bottom,
+    #e4d0ad,
+    transparent
+  );
+
+  transform-origin: top;
+
+  animation: scrollPulsar 2.5s ease-in-out infinite;
+}
+
+/* =========================================
+   SEM LINHAS DECORATIVAS NOS CANTOS
+========================================= */
+
+.hero-frame,
+.hero-frame .corner,
+.corner.top-left,
+.corner.top-right,
+.corner.bottom-left,
+.corner.bottom-right {
+  display: none;
+}
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+@keyframes heroLuz {
+  from {
+    transform: translate(-25px, -15px);
+    opacity: 0.45;
+  }
+
+  to {
+    transform: translate(30px, 30px);
+    opacity: 0.85;
+  }
+}
+
+@keyframes scrollPulsar {
+  0%, 100% {
+    transform: scaleY(0.7);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   TABLETS E TELEMÓVEIS
+========================================= */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh;
+    padding: 100px 20px 105px;
+  }
+
+  .hero-background-parallax {
+    inset: -30px;
+  }
+
+  .hero-background {
+    inset: -20px;
+    background-position: center;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 30px;
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
+
+  .first-name,
+  .second-name {
+    font-size: clamp(52px, 12vw, 78px);
+    letter-spacing: -1px;
+  }
+
+  .ampersand {
+    margin: 12px 0;
+    font-size: 55px;
+  }
+
+  .hero-ornament {
+    margin: 27px auto 23px;
+  }
+
+  .hero-message {
+    max-width: 340px;
+    font-size: 22px;
+  }
+
+  .hero-date-container {
+    margin-top: 35px;
+  }
+
+  .wedding-date {
+    font-size: 27px;
+    letter-spacing: 1px;
+  }
+
+  .hero-scroll span {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 380px) {
+  .first-name,
+  .second-name {
+    font-size: 49px;
+  }
+
+  .wedding-date {
+    font-size: 24px;
+  }
+}
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-light,
+  .scroll-line {
+    animation: none;
+  }
+
+  .hero-background {
+    will-change: auto;
+  }
+}

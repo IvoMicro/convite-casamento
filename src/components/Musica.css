@@ -1,0 +1,84 @@
+
+/* BOTÃO FLUTUANTE DE MÚSICA */
+
+.musica-botao {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 54px;
+  height: 54px;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 0;
+
+  background: #23465d;
+  color: #ffffff;
+
+  font-size: 27px;
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(20,46,65,0.25);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.musica-botao:hover {
+  background: #172f40;
+}
+
+.musica-botao.ativo {
+  background: #426780;
+}
+
+.musica-indicador {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  animation: musicaPulso 1.5s infinite;
+}
+
+@keyframes musicaPulso {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(1.4);
+  }
+}
+
+@media (max-width: 600px) {
+  .musica-botao {
+    bottom: 18px;
+    right: 18px;
+
+    width: 46px;
+    height: 46px;
+
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .musica-indicador {
+    animation: none;
+  }
+}
