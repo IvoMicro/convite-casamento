@@ -132,9 +132,9 @@ export default function Rodape() {
             className="rodape-assinatura"
             {...revelar(0.4)}
           >
-            <span>Aldimiro Carlos</span>
+            <span>Aldimiro </span>
             <span className="rodape-assinatura-e">&</span>
-            <span>Carlota Alfredo</span>
+            <span>Carlota </span>
           </motion.div>
 
           <motion.div

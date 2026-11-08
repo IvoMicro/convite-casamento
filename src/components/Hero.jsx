@@ -246,7 +246,7 @@ export default function Hero() {
               className="first-name"
               variants={aparecer}
             >
-              Aldimiro Carlos
+              Aldimiro 
             </motion.span>
 
             <motion.span
@@ -276,7 +276,7 @@ export default function Hero() {
               className="second-name"
               variants={aparecer}
             >
-              Carlota Alfredo
+              Carlota 
             </motion.span>
           </h1>
 
